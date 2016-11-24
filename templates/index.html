@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+
+<link rel = stylesheet type=text/css href = /styling.css>
+
+<script src = "{{ url_for('static', filename = 'app.js') }}"></script>
+
+<section ng-app = AngJSApp-Learning>
+  
+  <div ng-controller = 'codepenAngJSctrl'>
+    <h1> {{ '{{title}} ' }} </h1>
+    <br>
+    <h2> {{ '{{outputTitle}}' }} </h2>
+    <div class = code-descrip> 
+    {{ '{{outputDescrip}}' }}
+    </div>
+    <div class = output>
+      Input: <input ng-model = name
+             ng-blur = "clear()"> <br>
+      Output:  {{ '{{name}}' }} 
+    </div>
+  </div>
+  
+</section>
+
+{%endblock%}
