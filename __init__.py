@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask
 
 # from flask import Flask, render_template, request, redirect, jsonify, url_for, flash
 # from sqlalchemy import create_engine, asc
@@ -18,18 +18,11 @@ from flask import Flask, render_template, url_for, redirect
 
 app = Flask(__name__)
 
+# if it were in another file, it would be "filename.app_routes"
+import app_routes
+
 
 # Connect to Database and create database session
-
-@app.route('/')
-@app.route('/home')
-def home():
-    return render_template('/index.html')
-
-if __name__ == '__main__':
-    app.secret_key = 'super_secret_key'
-    app.debug = True
-    app.run(host='0.0.0.0', port=5000)
 
 # @app.route('/login')
 # def showLogin():
